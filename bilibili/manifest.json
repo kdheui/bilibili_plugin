@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Danmaku Classification",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.bilibili.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/2333.png",
+        "data/danmaku_data.json",
+        "images/感叹.png",
+        "images/吐槽.png",
+        "images/应援.png",
+        "images/剧情讨论.png",
+        "images/搞笑.png",
+        "images/知识补充.png",
+        "images/其他.png"
+      ],
+      "matches": ["*://*.bilibili.com/*"]
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
